@@ -31,3 +31,7 @@ Backend is running connected to the frontend at: [https://online-ticket-booking-
 - GOOGLE_CLIENT_ID
 - GOOGLE_CLIENT_SECRET
 
+
+## Authentication
+Uses BetterAuth with credentials and Google OAuth.
+
