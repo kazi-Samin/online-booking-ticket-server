@@ -16,13 +16,16 @@ app.use(express.json());
 
 const uri = process.env.MONGO_DB_URI;
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+let client;
+if (uri) {
+  client = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
+}
 
 let db;
 
@@ -30,6 +33,10 @@ let db;
 async function connectDB() {
   if (db) {
     return db; // already connected, reuse করো
+  }
+  if (!client) {
+    console.error("CRITICAL ERROR: MONGO_DB_URI is missing in Vercel Environment Variables!");
+    throw new Error("MONGO_DB_URI is missing!");
   }
   await client.connect();
   db = client.db('online-ticket-booking-platform');
