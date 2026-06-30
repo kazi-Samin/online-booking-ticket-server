@@ -18,3 +18,9 @@ Backend is running connected to the frontend at: [https://online-ticket-booking-
 - mongodb
 - dotenv
 - nodemon
+
+## Installation & Setup
+1. Clone the repository.
+2. Run npm install.
+3. Run npm run start to start the server.
+
