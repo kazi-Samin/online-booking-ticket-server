@@ -24,3 +24,10 @@ Backend is running connected to the frontend at: [https://online-ticket-booking-
 2. Run npm install.
 3. Run npm run start to start the server.
 
+
+## Environment Variables
+- MONGO_DB_URI
+- BETTER_AUTH_SECRET
+- GOOGLE_CLIENT_ID
+- GOOGLE_CLIENT_SECRET
+
