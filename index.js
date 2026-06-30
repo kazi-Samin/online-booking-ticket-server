@@ -179,7 +179,7 @@ app.get('/api/tickets/latest', async (req, res) => {
         isHidden: { $ne: true }
       })
       .sort({ createdAt: -1 })
-      .limit(9)
+      .limit(6)
       .toArray();
     res.send(result);
   } catch (err) {
